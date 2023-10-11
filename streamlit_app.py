@@ -15,7 +15,7 @@ streamlit.header("snowflake badge 2 header")
 streamlit.text("snowflake badge 2 TEXT")
 streamlit.dataframe(my_fruit_list)
 
-def get_fruityvice_data(this_fruit_choice):
+def get_fruity_vice_data(this_fruit_choice):
   fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + this_fruit_choice)
   fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
   return fruityvice_normalized
