@@ -20,16 +20,14 @@ def get_fruity_vice_data(this_fruit_choice):
   fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
   return fruityvice_normalized
 
-# streamlit.header("Fruityyive Advice")
-# try:
-#   fruit_choice = streamlit.text_input("What fruit")
-#   if not fruit_choice:
-#     streamlit.error("Please select a fruit choice")
-#   else:
-#     back_from_function = get_fruityvice_data(fruit_choice)
-#     streamlit.dataframe(back_from_function)
-
-  
+streamlit.header("Fruityyive Advice")
+try:
+  fruit_choice = streamlit.text_input("What fruit")
+  if not fruit_choice:
+    streamlit.error("Please select a fruit choice")
+  else:
+    back_from_function = get_fruityvice_data(fruit_choice)
+    streamlit.dataframe(back_from_function)
 
 streamlit.header("the fruit load list contains")
 def get_fruit_load_list():
@@ -37,7 +35,7 @@ def get_fruit_load_list():
       my_cur.execute("select * from fruit_load_list")
       return my_cur.fetchall()
 
-if streamlit.button("Get fruit list")
+if streamlit.button("Get fruit list"):
   my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
   my_data_rows = get_fruit_load_list()
   streamlit.dataframe(my_data_rows)
