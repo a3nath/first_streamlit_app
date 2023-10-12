@@ -26,7 +26,7 @@ try:
   if not fruit_choice:
     streamlit.error('Please select a fruit choice')
   else:
-    back_from_function = get_fruityvice_data(fruit_choice)
+    back_from_function = get_fruity_vice_data(fruit_choice)
     streamlit.dataframe(back_from_function)
 # streamlit.header('the fruit load list contains:')
 # def get_fruit_load_list():
