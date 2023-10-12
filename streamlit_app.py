@@ -19,15 +19,15 @@ def get_fruityvice_data(this_fruit_choice):
   fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + this_fruit_choice)
   fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
   return fruityvice_normalized
-  
-#streamlit.header('Fruityyive Advice')
-# try:
-#   fruit_choice = streamlit.text_input('What fruit')
-#   if not fruit_choice:
-#     streamlit.error('Please select a fruit choice')
-#   else:
-#     back_from_function = get_fruityvice_data(fruit_choice)
-#     streamlit.dataframe(back_from_function)
+
+streamlit.header('Fruityyive Advice')
+try:
+  fruit_choice = streamlit.text_input('What fruit')
+  if not fruit_choice:
+    streamlit.error("Please select a fruit choice")
+  else:
+    back_from_function = get_fruityvice_data(fruit_choice)
+    streamlit.dataframe(back_from_function)
 
 streamlit.header('the fruit load list contains:')
 def get_fruit_load_list():
