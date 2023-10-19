@@ -25,7 +25,7 @@ try:
   fruit_choice = streamlit.text_input('What fruit')
   if not fruit_choice:
     print("not a choice")
-    # streamlit.error("Please select a fruit choice")
+    streamlit.error("Please select a fruit choice")
   else:
     print("else")
     # back_from_function = get_fruityvice_data(fruit_choice)
