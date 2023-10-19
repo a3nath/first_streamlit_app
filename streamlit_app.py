@@ -16,7 +16,7 @@ streamlit.text("snowflake badge 2 TEXT")
 streamlit.dataframe(my_fruit_list)
                                            
 def get_fruityvice_data(this_fruit_choice):
-  fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + this_fruit_choice)
+  fruityvice_response = requests.get("https://fruityvice.com/api/fruit/mango")
   fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
   return fruityvice_normalized
 
@@ -30,6 +30,7 @@ try:
     print("else")
     back_from_function = get_fruityvice_data(fruit_choice)
     print(back_from_function)
+    streamlit.write("back_function")
     # streamlit.dataframe(back_from_function)
 
 streamlit.header('the fruit load list contains:')
