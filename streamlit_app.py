@@ -28,7 +28,8 @@ try:
     streamlit.error("Please select a fruit choice")
   else:
     print("else")
-    # back_from_function = get_fruityvice_data(fruit_choice)
+    back_from_function = get_fruityvice_data(fruit_choice)
+    print(back_from_function)
     # streamlit.dataframe(back_from_function)
 
 streamlit.header('the fruit load list contains:')
