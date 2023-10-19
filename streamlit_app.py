@@ -33,6 +33,10 @@ try:
     streamlit.write("back_function")
     # streamlit.dataframe(back_from_function)
 
+except URLERROR as e:
+  streamlit.error()
+  
+
 streamlit.header('the fruit load list contains:')
 def get_fruit_load_list():
   with my_cnx.cursor() as my_cur:
